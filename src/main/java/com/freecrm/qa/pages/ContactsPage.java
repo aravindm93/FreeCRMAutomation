@@ -43,8 +43,8 @@ public class ContactsPage extends Testbase{
 	}
 	
 	public void selectContactsByName(String name) {
-		driver.findElement(By.xpath("//a[text()='"+name+"']//parent::td[@class='datalistrow']"
-				+"//preceding-sibling::td[@class='datalistrow']//input[@name='contact_id']")).click();;
+		driver.findElement(By.xpath("//td/a[contains(text(),'"+name+"')]//parent::td[@class='datalistrow']"
+				+"//preceding-sibling::td[@class='datalistrow']/input[@name='contact_id']")).click();;
 	}
 	
 	public void createNewContact(String title,String ftName,String ltName,String comp) {

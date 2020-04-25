@@ -68,10 +68,17 @@ public class HomePageTest extends Testbase {
 	@Test(priority=5)
 	public void verifySearchTest() {
 		testUtil.switchToFrame();
-		homePage.verifySearch("Arvind");
-		Assert.assertTrue(driver.findElement(By.xpath("//td[contains(text(),'Arvind')]")).isDisplayed());		
+		homePage.verifySearch("Test Contact");
+		Assert.assertTrue(driver.findElement(By.xpath("//td[contains(text(),'Test Contact')]")).isDisplayed());		
 	}
 
+	@Test(priority=6)
+	public void clickOnLogoutTest() throws IOException {
+		testUtil.switchToFrame();
+		loginPage=homePage.clickOnLogout();
+		String title=driver.getTitle();
+		Assert.assertEquals(title, "CRMPRO - CRM software for customer relationship management, sales, and support.");
+	}
 	
 	
 	@AfterMethod

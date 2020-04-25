@@ -17,9 +17,6 @@ public class HomePage extends Testbase{
 	@FindBy(xpath="//td[contains(text(),'Demo User')]")
 	WebElement userNameText;
 	
-	@FindBy(xpath="//*[contains(text(),'Logout')]")
-	WebElement logoutLink;
-	
 	@FindBy(xpath="//a[text()='Contacts']")
 	WebElement contactsTab;
 	
@@ -37,6 +34,9 @@ public class HomePage extends Testbase{
 	
 	@FindBy(xpath="//a[contains(text(),'New Contact')]")
 	WebElement newContactLink;
+	
+	@FindBy(xpath="//i[@class='fa fa-sign-out icon-2x']")
+	WebElement logoutLink;
 	
 	public HomePage() throws IOException {
 		
@@ -78,6 +78,9 @@ public class HomePage extends Testbase{
 		newContactLink.click();
 	}
 
-	
+	public LoginPage clickOnLogout() throws IOException {
+		logoutLink.click();
+		return new LoginPage();
+	}
 
 }

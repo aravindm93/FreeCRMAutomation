@@ -22,7 +22,7 @@ public class ContactsPageTest extends Testbase {
 	HomePage homePage;
 	Testutil testUtil;
 	ContactsPage contactsPage;
-	String sheetName="Contacts";
+	
 
 	public ContactsPageTest() throws IOException {
 		super();
@@ -36,6 +36,7 @@ public class ContactsPageTest extends Testbase {
 		contactsPage=new ContactsPage();
 		homePage=loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
 		testUtil.switchToFrame();
+		contactsPage=homePage.clickOnContactsLink();
 		
 	}
 	
@@ -46,18 +47,18 @@ public class ContactsPageTest extends Testbase {
 	
 	@Test(priority=2)
 	public void selectSingleContactsTest() {
-		contactsPage.selectContactsByName("abc xyz");
+		contactsPage.selectContactsByName("Aakash Jain");
 	}
 	
 	@Test(priority=3)
 	public void selectMultipleContactsTest() {
-		contactsPage.selectContactsByName("abc xyz");
-		contactsPage.selectContactsByName("akash reddy");
+		contactsPage.selectContactsByName("David Cris");
+		contactsPage.selectContactsByName("David Dhawan");
 	}
 	
 	@DataProvider
 	public Object[][] getCRMTestData() {
-		Object data[][]=Testutil.getTestData(sheetName);
+		Object data[][]=Testutil.getTestData("Contacts");
 		return data;
 	}
 	

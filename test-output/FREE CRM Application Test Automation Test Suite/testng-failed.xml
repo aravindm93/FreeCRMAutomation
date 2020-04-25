@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="3" guice-stage="DEVELOPMENT" name="Failed suite [FREE CRM Application Test Automation Test Suite]" parallel="tests">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [FREE CRM Application Test Automation Test Suite]" parallel="tests">
   <listeners>
     <listener class-name="com.freecrm.qa.listener.MyCustomListener"/>
   </listeners>
-  <test thread-count="3" name="Free CRM App Test Cases(failed)" parallel="tests">
+  <test thread-count="5" name="Free CRM App Test Cases(failed)" parallel="tests">
     <classes>
       <class name="com.freecrm.qa.tests.HomePageTest">
         <methods>
           <include name="verifySearchTest"/>
           <include name="setUp"/>
-          <include name="verifyHomePageTitleTest"/>
-          <include name="verifyUserNameTest"/>
-          <include name="verifyLogoutTest"/>
-          <include name="verifyContactsLinkTest"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.freecrm.qa.tests.HomePageTest -->
